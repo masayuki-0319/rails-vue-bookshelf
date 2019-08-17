@@ -1,24 +1,14 @@
-# README
+# 【概要】
+- [Rails+Vue.js]によるCRUD処理のチュートリアル
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## □ 開発環境等
+- 言語：Ruby, Javascript
+- フロントエンド：Vue.js(Webpack)
+- バックエンド：Ruby on Rails
+- バージョン管理：Git
+- リポジトリ管理：GitHub
 
-Things you may want to cover:
+## □ 実装機能
+- APIを使用した本のCRUD処理
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## □ 記事URL
