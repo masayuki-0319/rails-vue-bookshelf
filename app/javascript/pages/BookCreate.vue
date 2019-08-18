@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <h1 class="#f3e5f5 purple lighten-5 center">本の登録</h1>
     <form class="col">
       <div class="row">
         <div class="input-field">
