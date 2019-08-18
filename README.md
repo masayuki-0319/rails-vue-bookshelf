@@ -9,6 +9,12 @@
 - リポジトリ管理：GitHub
 
 ## □ 実装機能
-- APIを使用した本のCRUD処理
+- お気に入りの本を登録，参照，編集，削除
+- 非同期通信（Ajax）による[Rails+Vue.js]のCRUD処理
+- Single Page Application（SPA）
 
-## □ 記事URL
+## □ Qiita記事
+- [[Rails+Vue.js]に係るCRUD入門〜Part１：環境構築編〜](https://qiita.com/Moo_Moo_Farm/items/afacfe4349af6a106253)
+- [[Rails+Vue.js]に係るCRUD入門〜Part２: Read編〜](https://qiita.com/Moo_Moo_Farm/items/fdf133d4c2bcf6d207b6)
+- [[Rails+Vue.js]に係るCRUD入門〜Part３: Vue Router設定編〜](https://qiita.com/Moo_Moo_Farm/items/075e970287cb1aaf52c1)
+- [[Rails+Vue.js]に係るCRUD入門〜Part４: Create, Update, Delete編〜](https://qiita.com/Moo_Moo_Farm/items/8cf46e228d59417550b1)
