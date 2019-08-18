@@ -4,7 +4,7 @@
        <div class="nav-wrapper">
          <router-link to="/" class="brand-logo">Bookshelf</router-link>
          <ul id="nav-mobile" class="right">
-           <li><router-link to="">本の登録</router-link></li>
+           <li><router-link to="/create">本の登録</router-link></li>
          </ul>
        </div>
      </nav>
