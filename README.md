@@ -18,3 +18,4 @@
 - [[Rails+Vue.js]に係るCRUD入門〜Part２: Read編〜](https://qiita.com/Moo_Moo_Farm/items/fdf133d4c2bcf6d207b6)
 - [[Rails+Vue.js]に係るCRUD入門〜Part３: Vue Router設定編〜](https://qiita.com/Moo_Moo_Farm/items/075e970287cb1aaf52c1)
 - [[Rails+Vue.js]に係るCRUD入門〜Part４: Create, Update, Delete編〜](https://qiita.com/Moo_Moo_Farm/items/8cf46e228d59417550b1)
+- [[Rails+Vue.js]に係るCRUD入門〜Part５: Vuex設定編〜](https://qiita.com/Moo_Moo_Farm/items/fbc2e8c8f971dc5fe4bb)
