@@ -7,7 +7,9 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    books: []
+    books: [],
+    bookInfo: {},
+    bookInfoBool: false
   },
   mutations: {
     fetchBooks(state) {
@@ -19,6 +21,12 @@ export default new Vuex.Store({
       }, (error) => {
         console.log(error);
       });
+    },
+    setBookInfo(state, { id } ) {
+      axios.get(`api/books/${id}.json`).then(res => {
+        state.bookInfo = res.data;
+        state.bookInfoBool = true;
+      });
     }
-  },
+  }
 })
