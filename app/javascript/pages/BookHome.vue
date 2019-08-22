@@ -44,22 +44,17 @@
       return {
         bookInfo: {},
         bookInfoBool: false,
-        books: [],
       }
     },
+    computed: {
+     books() {
+       return this.$store.state.books
+     },
+    },
     mounted: function() {
-      this.fetchBooks();
+      this.$store.commit('fetchBooks')
     },
     methods: {
-      fetchBooks() {
-        axios.get('/api/books').then((res) => {
-          for(var i = 0; i < res.data.books.length; i++) {
-            this.books.push(res.data.books[i]);
-          }
-        }, (error) => {
-          console.log(error);
-        });
-      },
       setBookInfo(id){
         axios.get(`api/books/${id}.json`).then(res => {
           this.bookInfo = res.data;
@@ -73,7 +68,7 @@
           this.bookInfoBool = false;
           this.fetchBooks();
         })
-      },
+      }
     }
   }
 </script>
