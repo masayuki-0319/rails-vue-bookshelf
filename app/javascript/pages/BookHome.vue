@@ -59,13 +59,9 @@
         this.$store.commit('setBookInfo', { id })
       },
       deleteBook(id) {
-        axios.delete(`/api/books/${id}`).then(res => {
-          this.books = [];
-          this.bookInfo = '';
-          this.bookInfoBool = false;
-          this.fetchBooks();
-        })
-      }
+        this.$store.commit('deleteBook', { id })
+        this.$store.commit('fetchBooks')
+      },
     }
   }
 </script>
