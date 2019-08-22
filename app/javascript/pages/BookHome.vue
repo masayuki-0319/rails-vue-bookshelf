@@ -37,20 +37,15 @@
 
 <script>
   import axios from 'axios'
+  import { mapState, mapMutations } from 'vuex'
 
   export default {
     name: 'BookHome',
-    computed: {
-      books() {
-        return this.$store.state.books
-      },
-      bookInfo() {
-        return this.$store.state.bookInfo
-      },
-      bookInfoBool() {
-        return this.$store.state.bookInfoBool
-      }
-    },
+    computed: mapState([
+      'books',
+      'bookInfo',
+      'bookInfoBool',
+    ]),
     mounted: function() {
       this.$store.commit('fetchBooks')
     },
