@@ -4,11 +4,11 @@
        <div class="nav-wrapper">
          <router-link to="/" class="brand-logo">Bookshelf</router-link>
          <ul id="nav-mobile" class="right">
-           <li v-if="!signedIn()">ログイン中</li>
+           <li v-if="signedIn()">ログイン中</li>
            <li><router-link to="/create">本の登録</router-link></li>
            <li><router-link to="/signup" v-if="!signedIn()">Sign up</router-link></li>
-           <li><router-link to="/signIn" v-if="!signedIn()">Sign in</router-link></li>
-           <li><a href="#" @click.prevent="signout" v-if="signedIn()">Sign out</a><li>
+           <li><router-link to="/signin" v-if="!signedIn()">Sign in</router-link></li>
+           <li><a href="#" v-if="signedIn()" @click.prevent="signOut">Sign out</a></li>
          </ul>
        </div>
      </nav>
