@@ -4,12 +4,39 @@
        <div class="nav-wrapper">
          <router-link to="/" class="brand-logo">Bookshelf</router-link>
          <ul id="nav-mobile" class="right">
+           <li v-if="!signedIn()">ログイン中</li>
            <li><router-link to="/create">本の登録</router-link></li>
+           <li><router-link to="/signup" v-if="!signedIn()">Sign up</router-link></li>
+           <li><router-link to="/signIn" v-if="!signedIn()">Sign in</router-link></li>
+           <li><a href="#" @click.prevent="signout" v-if="signedIn()">Sign out</a><li>
          </ul>
        </div>
      </nav>
    </div>
 </template>
 
-<script></script>
-<style scoped></style>
+<script>
+  export default {
+    name: 'Header',
+    created () {
+      this.signedIn()
+    },
+    methods: {
+      setError (error, text) {
+        this.error = (error.response && error.response.data && error.response.data.error) || text
+      },
+      signedIn () {
+        return localStorage.signedIn
+      },
+      signOut () {
+        this.$http.secured.delete('/signin')
+          .then(response => {
+            delete localStorage.csrf
+            delete localStorage.signedIn
+            this.$router.replace('/')
+          })
+          .catch(error => this.setError(error, 'Cannot sign out'))
+      }
+    }
+  }
+</script>
