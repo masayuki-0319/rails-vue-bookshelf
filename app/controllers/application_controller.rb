@@ -4,6 +4,11 @@ class ApplicationController < ActionController::Base
 
   private
 
+  # メソッド追加
+  def current_user
+    @current_user ||= User.find(payload['user_id'])
+  end
+
   def not_authorized
     render json: { error: 'Not Authorized' }, status: :unauthorized
   end
