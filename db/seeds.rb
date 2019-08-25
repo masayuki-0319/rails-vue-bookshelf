@@ -1,3 +1,10 @@
+User.create!(
+  name: 'Admin User',
+  email: 'example@example.com',
+  password: 'foobar',
+  password_confirmation: 'foobar'
+)
+
 books = [
   { title: 'ヤマノススメ', author: 'しろ', publisher: 'アース・スター エンターテイメント', genre: 'アウトドア' },
   { title: 'ゆるキャン△', author: 'あｆろ', publisher: '芳文社', genre: 'アウトドア' },
