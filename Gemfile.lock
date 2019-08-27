@@ -136,6 +136,7 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
+    redis (4.1.2)
     ruby_dep (1.5.0)
     sass (3.7.4)
       sass-listen (~> 4.0.0)
@@ -200,6 +201,7 @@ DEPENDENCIES
   materialize-sass
   puma (~> 3.11)
   rails (~> 5.2.3)
+  redis
   sass-rails (~> 5.0)
   spring
   spring-watcher-listen (~> 2.0.0)

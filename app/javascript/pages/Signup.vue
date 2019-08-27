@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1 class="#f3e5f5 purple lighten-5 center">Sign Up</h1>
+    <h1 class="#f3e5f5 purple lighten-5 center">Sign UP</h1>
     <form class="col" @submit.prevent="signup">
       <div class="text-red" v-if="error">{{ error }}</div>
       <div class="row">
@@ -50,7 +50,7 @@
     },
     methods: {
       signup () {
-        this.$http.plain.post('api/users', { name: this.name, email: this.email, password: this.password, password_confirmation: this.password_confirmation })
+        this.$http.plain.post('api/signup', { name: this.name, email: this.email, password: this.password, password_confirmation: this.password_confirmation })
           .then(response => this.signupSuccessful(response))
           .catch(error => this.signupFailed(error))
       },

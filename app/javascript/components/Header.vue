@@ -29,7 +29,7 @@
         return localStorage.signedIn
       },
       signOut () {
-        this.$http.secured.delete('/signin')
+        this.$http.secured.delete(`/api/signin`)
           .then(response => {
             delete localStorage.csrf
             delete localStorage.signedIn
