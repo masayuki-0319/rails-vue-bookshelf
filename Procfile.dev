@@ -1,4 +1,4 @@
 redis: bundle exec redis-server /usr/local/etc/redis.conf
-web: bundle exec rails s
+web: bundle exec rails s -p 5000
 # watcher: ./bin/webpack-watcher
 webpacker: ./bin/webpack-dev-server
