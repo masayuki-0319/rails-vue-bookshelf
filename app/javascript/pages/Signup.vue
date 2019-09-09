@@ -33,7 +33,7 @@
 <script>
   export default {
     name: 'Signup',
-    data () {
+    data() {
       return {
         name: '',
         email: '',
@@ -42,35 +42,35 @@
         error: ''
       }
     },
-    created () {
-      this.checkedSignedIn()
+    created() {
+      this.checkSignedIn()
     },
-    updated () {
-      this.checkedSignedIn()
+    updated() {
+      this.checkSignedIn()
     },
     methods: {
-      signup () {
-        this.$http.plain.post('api/signup', { name: this.name, email: this.email, password: this.password, password_confirmation: this.password_confirmation })
+      signup() {
+        this.$http.plain.post('/api/signup', { name: this.name, email: this.email, password: this.password, password_confirmation: this.password_confirmation })
           .then(response => this.signupSuccessful(response))
           .catch(error => this.signupFailed(error))
       },
-      signupSuccessful (response) {
+      signupSuccessful(response) {
         if (!response.data.csrf) {
           this.signupFailed(response)
           return
         }
-
         localStorage.csrf = response.data.csrf
         localStorage.signedIn = true
+        this.$store.dispatch('doFetchSignedIn')
         this.error = ''
         this.$router.replace('/')
       },
-      signupFailed (error) {
+      signupFailed(error) {
         this.error = (error.response && error.response.data && error.response.data.error) || 'Something went wrong'
         delete localStorage.csrf
         delete localStorage.signedIn
       },
-      checkedSignedIn () {
+      checkSignedIn() {
         if (localStorage.signedIn) {
           this.$router.replace('/')
         }

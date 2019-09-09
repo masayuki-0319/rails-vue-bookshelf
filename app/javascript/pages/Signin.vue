@@ -24,41 +24,42 @@
 <script>
   export default {
     name: 'Signin',
-    data () {
+    data() {
       return {
         email: '',
         password: '',
         error: ''
       }
     },
-    created () {
+    created() {
       this.checkSignedIn()
     },
-    updated () {
+    updated() {
       this.checkSignedIn()
     },
     methods: {
-      signin () {
+      signin() {
         this.$http.plain.post('/api/signin', { email: this.email, password: this.password })
           .then(response => this.signinSuccessful(response))
           .catch(error => this.signinFailed(error))
       },
-      signinSuccessful (response) {
+      signinSuccessful(response) {
         if (!response.data.csrf) {
           this.signinFailed(response)
           return
         }
         localStorage.csrf = response.data.csrf
         localStorage.signedIn = true
+        this.$store.dispatch('doFetchSignedIn')
         this.error = ''
         this.$router.replace('/')
       },
-      signinFailed (error) {
+      signinFailed(error) {
         this.error = (error.response && error.response.data && error.response.data.error) || ''
         delete localStorage.csrf
         delete localStorage.signedIn
       },
-      checkSignedIn () {
+      checkSignedIn() {
         if (localStorage.signedIn) {
           this.$router.replace('/')
         }

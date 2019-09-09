@@ -15,23 +15,17 @@
 </template>
 
 <script>
+  import { mapState } from 'vuex'
+
   export default {
     name: 'Header',
-    data() {
-      return {
-        signedIn: ''
-      }
-    },
-    created () {
-      this.fetchSignedIn()
-    },
-    updated () {
-      this.fetchSignedIn()
+    computed: mapState([
+      'signedIn'
+    ]),
+    mounted: function() {
+      this.$store.dispatch('doFetchSignedIn')
     },
     methods: {
-      fetchSignedIn() {
-        this.signedIn = !!localStorage.signedIn
-      },
       setError(error, text) {
         this.error = (error.response && error.response.data && error.response.data.error) || text
       },
