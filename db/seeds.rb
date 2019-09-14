@@ -1,3 +1,10 @@
+User.create!(
+  name: 'Admin User',
+  email: 'example@example.com',
+  password: 'foobar',
+  password_confirmation: 'foobar'
+)
+
 books = [
   { title: 'ヤマノススメ', author: 'しろ', publisher: 'アース・スター エンターテイメント', genre: 'アウトドア' },
   { title: 'ゆるキャン△', author: 'あｆろ', publisher: '芳文社', genre: 'アウトドア' },
@@ -16,7 +23,7 @@ books = [
   { title: 'オーバーロード', author: '丸山くがね', publisher: 'エンターブレイン', genre: 'ファンタジー' },
   { title: '涼宮ハルヒシリーズ', author: '谷川流', publisher: '角川書店', genre: '学園' },
   { title: 'ようこそ実力至上主義の教室へ', author: '衣笠彰梧', publisher: '	KADOKAWA', genre: '学園' },
-  { title: 'フルメタル・パニック!', author: '賀東招二', publisher: 'KADOKAWA・富士見書房', genre: '戦争' },
+  { title: 'フルメタル・パニック!', author: '賀東招二', publisher: 'KADOKAWA', genre: '戦争' },
   { title: 'アクセル・ワールド', author: '川原礫', publisher: 'KADOKAWA', genre: '学園' },
   { title: 'とある魔術の禁書目録', author: '鎌池和馬', publisher: 'KADOKAWA', genre: 'ファンタジー' },
 ]
