@@ -37,8 +37,7 @@
 
 <script>
   import axios from 'axios'
-  import { mapState, mapMutations } from 'vuex'
-
+  import { mapState } from 'vuex'
   export default {
     name: 'BookHome',
     computed: mapState([
@@ -55,7 +54,6 @@
       },
       deleteBook(id) {
         this.$store.commit('deleteBook', { id })
-        this.$store.commit('fetchBooks')
       },
     }
   }
