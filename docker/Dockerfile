@@ -1,4 +1,4 @@
-FROM ruby:2.7.0-alpine3.10
+FROM ruby:2.5.1-alpine3.10
 ENV LANG C.UTF-8
 ENV TZ Asia/Tokyo
 
