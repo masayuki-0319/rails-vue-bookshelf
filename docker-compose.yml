@@ -1,0 +1,41 @@
+version: '3'
+services:
+  datastore:
+    image: busybox
+    volumes:
+      - db_data:/var/lib/mysql
+      - bundle_install:/usr/local/bundle
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: pass
+    tty: true
+    ports:
+      - 3306:3306
+    volumes:
+      - db_data:/var/lib/mysql
+  app:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    # command: ["bin/server"]
+    depends_on:
+      - db
+      - redis
+    expose:
+      - "3000"
+      - "3035"
+    stdin_open: true
+    tty: true
+    ports:
+      - 3000:3000
+      - 3035:3035
+    volumes:
+      - bundle_install:/usr/local/bundle
+      - ./:/app:cached
+  redis:
+    image: redis
+    stdin_open: true
+volumes:
+  db_data:
+  bundle_install:
