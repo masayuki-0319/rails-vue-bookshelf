@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2019_09_14_070117) do
 
-  create_table "books", force: :cascade do |t|
+  create_table "books", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin", force: :cascade do |t|
     t.string "title", null: false
     t.string "author", null: false
     t.string "publisher", null: false
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2019_09_14_070117) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin", force: :cascade do |t|
     t.string "name", null: false
     t.string "email", null: false
     t.string "password_digest", null: false

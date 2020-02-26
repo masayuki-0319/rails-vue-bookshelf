@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.5.1'
+ruby '2.5.7'
 
 gem 'rails', '~> 5.2.3'
 gem 'puma', '~> 3.11'
@@ -18,8 +18,11 @@ gem 'faker'
 gem 'bcrypt'
 gem 'jwt_sessions'
 gem 'redis'
+gem 'mysql2'
 
 group :development, :test do
+  gem 'pry-rails'
+  gem 'pry-byebug'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'foreman'
 end

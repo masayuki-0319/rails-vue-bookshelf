@@ -1,4 +1,4 @@
-FROM ruby:2.5.1-alpine3.10
+FROM ruby:2.5.7-alpine3.10
 ENV LANG C.UTF-8
 ENV TZ Asia/Tokyo
 
@@ -27,4 +27,4 @@ RUN bundle install --jobs=4
 ENV BUNDLE_GEMFILE='/app/Gemfile'
 
 # After creating project and setting `bin/server`
-# RUN chmod 777 bin/server
+RUN chmod 777 bin/server
