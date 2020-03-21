@@ -1,3 +1,2 @@
-redis: bundle exec redis-server /usr/local/etc/redis.conf
-web: bundle exec rails s -p 5000
-webpacker: ./bin/webpack-dev-server
+web: bundle exec rails s -p 5000 -b 0.0.0.0
+webpacker: ./bin/webpack-dev-server --host 0.0.0.0 --port 3035
