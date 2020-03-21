@@ -3,12 +3,12 @@ class Api::BooksController < ApplicationController
 
   def index
     @books = Book.all
-    render 'index', formats: 'json', handlers: 'jbuilder'
+    render 'index', formats: :json, handlers: 'jbuilder'
   end
 
   def show
     @book = Book.find(params[:id])
-    render 'show', formats: 'json', handlers: 'jbuilder'
+    render 'show', formats: :json, handlers: 'jbuilder'
   end
 
   def create
@@ -23,7 +23,7 @@ class Api::BooksController < ApplicationController
   def update
     @book = Book.find(params[:id])
     if @book.update_attributes(book_params)
-      render 'index', formats:'json', handlers: 'jbuilder'
+      render 'index', formats: :json, handlers: 'jbuilder'
     else
       render json: @book.errors, status: :unprocessable_entity
     end
